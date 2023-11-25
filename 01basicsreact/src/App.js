@@ -1,8 +1,11 @@
-
+import Name from './Name'
 
 function App() {
   return (
-    <h1>Ammar Mirza</h1>
+    <>
+    <h1>Welcome to my React Website</h1>
+    <Name/>
+    </>
   );
 }
 

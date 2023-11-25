@@ -1,10 +1,7 @@
-
-
-
 function App() {
 
   return (
-    <h1>Ammar Mirza ViteReact</h1>
+    <h1>Welcome to my ViteReact Project</h1>
   )
 }
 
