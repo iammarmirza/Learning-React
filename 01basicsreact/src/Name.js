@@ -1,6 +1,8 @@
 function Name () {
     return (
-        <h1>My name is Ammar Mirza</h1>
+       <div id='card'>
+        <img class="card-image" src='https://images.pexels.com/photos/19031635/pexels-photo-19031635/free-photo-of-a-window-with-a-reflection-of-trees-and-water.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'/>
+       </div>
     )
 }
 
