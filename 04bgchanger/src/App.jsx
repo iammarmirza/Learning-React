@@ -2,25 +2,24 @@ import { useState } from 'react'
 import Button from './components/Button'
 
 function App() {
-  const [color, setColor] = useState('#808000')
+  const [color, setColor] = useState('bg-blue-400')
 
   function changeBg (newColor) {
     setColor(newColor)
   }
 
   return (
-    <div className='h-screen w-screen' style={{backgroundColor: color}}>
+    <div className={`h-screen w-screen ${color}`}>
       <div className='fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2'>
         <div className='flex flex-wrap gap-3 justify-center bg-white shadow-lg px-3 py-2 rounded-3xl'>
-          <Button color='Red' hex='#FF0000' onClick={changeBg}/>
-          <Button color='Pink' hex='#FF69B4' onClick={changeBg}/>
-          <Button color='Blue' hex='#89CFF0' onClick={changeBg}/>
-          <Button color='Orange' hex='#FF5733' onClick={changeBg}/>
-          <Button color='Black' hex='#000000' onClick={changeBg}/>
-          <Button color='Yellow' hex='#FFFF00' onClick={changeBg}/>
-          <Button color='Green' hex='#097969' onClick={changeBg}/>
-          <Button color='Purple' hex='#BF40BF' onClick={changeBg}/>
-          <Button color='Gray' hex='#808080' onClick={changeBg}/>
+          <Button colorName='Red' colorClass='bg-red-500' onClick={changeBg}/>
+          <Button colorName='Pink' colorClass='bg-pink-500' onClick={changeBg}/>
+          <Button colorName='Blue' colorClass='bg-blue-500' onClick={changeBg}/>
+          <Button colorName='Orange' colorClass='bg-orange-500' onClick={changeBg}/>
+          <Button colorName='Black' colorClass='bg-black' onClick={changeBg}/>
+          <Button colorName='Green' colorClass='bg-green-500' onClick={changeBg}/>
+          <Button colorName='Purple' colorClass='bg-purple-500' onClick={changeBg}/>
+          <Button colorName='Gray' colorClass='bg-slate-500' onClick={changeBg}/>
         </div>
       </div>
     </div>
