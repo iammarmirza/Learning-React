@@ -1,19 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function List({ tasks }) {
 
+function Lists({ tasks, deleteTask }) {
+    
   return (
     <>
-      <div className='flex flex-col gap-10 text-white items-center font-semibold text-2xl'>
-        {tasks.map(task => (
-            <div className='flex items-center justify-between w-[800px] text-3xl'>
-                <p>{task}</p>
-                <button className='text-white bg-red-500 px-3 py-2 rounded-lg'>Delete</button>
-            </div>
+        {tasks.map((task, index) => (
+            <SingleTask key={index} task={task} deleteTask={deleteTask}/>
         ))}
-      </div>
     </>
   );
 }
 
-export default List;
+function SingleTask ({task, deleteTask}) {
+    const [isStriked, setIsStriked] = useState(false)
+
+    const toggleStrike = () => {
+        setIsStriked((prev) => !prev)
+    }
+
+    return (
+        <div className='flex items-center justify-between w-[800px] text-3xl text-white self-center'>
+                <p onClick={toggleStrike} className={isStriked ? 'line-through' : ''}>{task}</p>
+                <button onClick={() => deleteTask(task)} className='text-white bg-red-500 px-3 py-2 rounded-lg'>Delete</button>
+        </div>
+    )
+}
+
+export default Lists;
